@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #0d0d0d;
+}
+.container{
+    margin-left: 20px;
+}
+.settings{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.dark-label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+div.switch-container{
+    margin-top: 10px;
+    background: #00aaff;
+    width: 40px;
+    height: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(16, 56, 227, 1);
+    
+}
+span.switch{
+    margin-left: 5px;
+    margin-top: 1px;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    transition: .5s ease;
+    box-shadow: 0 0 10px rgba(128,86,227,.6);
+    transform: translate(-30%);
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]:checked + span.switch{
+    transform: translate(95%);
+}
+
+hr{
+    width: 430px;
+}
+
+.about{
+    margin-bottom: 20px;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sub-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.social-icon{
+    width: 24px;
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: white;
+}

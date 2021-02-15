@@ -1,0 +1,38 @@
+{
+  "name": "do-it",
+  "version": "1.0.0",
+  "description": "An to do app made with Electron JS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-linux": "electron-packager . do-it --overwrite --asar --platform=linux --arch=x64 --icon=icons/do-it.png --prune=true --out=dist",
+    "build-deb": "electron-installer-debian --src dist/do-it-linux-x64/ --arch amd64 --config config.json",
+    "build-mac": "electron-packager . do-it --overwrite --platform=darwin --arch=x64 --icon=icons/do-it.png --prune=true --out=dist",
+    "build-win": "electron-packager . do-it --overwrite --asar --platform=win32 --arch=ia32 --icon=icons/do-it.png --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Do It\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aguiarr/to-do-app.git"
+  },
+  "keywords": [
+    "app",
+    "electron",
+    "to",
+    "do",
+    "javascript"
+  ],
+  "author": "Matheus Aguiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aguiarr/to-do-app/issues"
+  },
+  "homepage": "https://github.com/aguiarr/to-do-app#readme",
+  "dependencies": {
+    "jsonfile-promised": "0.0.1"
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.2.0"
+  }
+}

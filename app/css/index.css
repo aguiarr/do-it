@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: white;
+    color:  #0d0d0d;
+}
+
+.settings{
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -35px;
+    margin-right: 20px;
+}
+
+.settings:hover{
+    transition: opacity .2s;
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.container{
+    text-align: center;
+    margin-top: 40px; 
+}
+
+.add-task{
+    font-size: 14px;
+}
+.add-label:hover{
+    transition: .5s;
+    cursor: pointer;
+    color: #737373;
+}
+
+.task{
+    list-style: none;
+    margin-left: -45px;
+}
+
+.task-name{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    border: 0 none;
+    outline: 0;
+    width: 300px;
+    /* border-bottom: solid;
+    border-width: .2px; */
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.checkbox-input:hover{
+    cursor:pointer ;
+}
+
+.remove-task{
+    margin-bottom: -3px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.remove-task:hover {
+    transition: opacity .2s;
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px grey; 
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: grey; 
+border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: grey; 
+}
+@media only screen and (min-width: 800px) {
+    .task-name{
+        width: 600px;
+    }
+    
+  }
+
