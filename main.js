@@ -1,7 +1,12 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
-const config = require(__dirname + '/config/config')
-const data = require(__dirname + '/data');
+const { app, BrowserWindow, ipcMain, nativeTheme} = require('electron');
+const config = require(__dirname + '/config/config');
+var theme = null;
 
+if(nativeTheme.themeSource == 'system' ||nativeTheme.themeSource == 'dark' ){
+  theme = 0; 
+}else{
+  theme = 1;
+}
 
 
 function createWindow () {
@@ -14,33 +19,23 @@ function createWindow () {
       contextIsolation: false,
     }
   });
-  
+  win.removeMenu();
   win.loadURL(`file://${__dirname}/app/index.html`);
 }
 
 
-config.init();
-data.init();
 app.whenReady().then(createWindow);
 
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+ipcMain.on('dark-mode', (event, arg) => {
+  theme == 0 ? event.returnValue = true : event.returnValue = false;
 });
 
-ipcMain.on('read-file', (event, arg) =>{
-  if(arg == 'config'){
-    config.get().then( a => {  
-      event.returnValue = a;
-    })
+ipcMain.on('change-theme', (event, arg) => {
+  if(arg == true){
+    theme = 0;
   }else{
-    data.get().then( a => {  
-      event.returnValue = a;
-    })
+    theme = 1;
   }
-
 });
 
 ipcMain.on('save-file', (event, type, arg) =>{
@@ -60,8 +55,8 @@ let settings = null;
 ipcMain.on('open-settings', () => {
     if (settings == null) {
         settings = new BrowserWindow({
-            width: 500,
-            height: 480,
+            width: 400,
+            height: 350,
             alwaysOnTop: true,
             frame: true,
             resizable: false,
@@ -79,6 +74,12 @@ ipcMain.on('open-settings', () => {
 });
 ipcMain.on('close-settings', () => {
   settings.close();
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
 
 app.on('activate', () => {

@@ -4,13 +4,14 @@ body{
     font-family: 'Noto Sans', sans-serif;
     background-color: white;
     color:  #0d0d0d;
+    transition: background .5s;
 }
 
 .settings{
     float: right;
     font-size: 24px;
     font-weight: bold;
-    margin-top: -35px;
+    margin-top: -25px;
     margin-right: 20px;
 }
 
@@ -22,7 +23,7 @@ body{
 
 .container{
     text-align: center;
-    margin-top: 40px; 
+    margin-top: 60px; 
 }
 
 .add-task{
@@ -45,8 +46,6 @@ body{
     border: 0 none;
     outline: 0;
     width: 300px;
-    /* border-bottom: solid;
-    border-width: .2px; */
     margin-bottom: 10px;
     background-color: white;
 }
@@ -70,6 +69,7 @@ body{
 .dark-mode {
     background-color: #333333;
     color: white;
+    transition: background .5s;
 }
 
 ::-webkit-scrollbar {
@@ -87,6 +87,49 @@ border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
 background: grey; 
+}
+
+#dark-mode{
+    display: none;
+}
+
+.dark-mode-div{
+    margin-left: 15px;
+    width: 70px;
+}
+.dark-label{
+    font-size: 24px;
+}
+
+div.switch-container:hover{
+    cursor: pointer;
+}
+div.switch-container{
+    margin-top: -25px;
+    margin-left: 30px;
+    background: #00aaff;
+    width: 35px;
+    height: 16px;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(16, 56, 227, 1);
+    
+}
+span.switch{
+    margin-left: 5px;
+    margin-top: 1px;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    height: 16px;
+    width: 16px;
+    transition: .5s ease;
+    box-shadow: 0 0 10px rgba(128,86,227,.6);
+    transform: translate(-30%);
+    display: grid;
+    place-content: center;
+}
+#dark-mode:checked + span.switch{
+    transform: translate(95%);
 }
 @media only screen and (min-width: 800px) {
     .task-name{

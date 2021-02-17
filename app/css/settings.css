@@ -6,10 +6,7 @@ body{
 }
 .container{
     margin-left: 20px;
-}
-.settings{
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .dark-label{
     font-size: 18px;
@@ -47,7 +44,7 @@ input[type="checkbox"]:checked + span.switch{
 }
 
 hr{
-    width: 430px;
+    width: 350px;
 }
 
 .about{
@@ -68,7 +65,7 @@ hr{
     width: 24px;
 }
 
-.dark-mode {
+.dark-mode{
     background-color: #333333;
     color: white;
 }
