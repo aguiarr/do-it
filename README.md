@@ -13,4 +13,4 @@ This is a task application made with Node Js using Electron. Menage your daily t
 
 ## Download
 
-Debian 60b - https://drive.google.com/file/d/1_lhf9aYMlN32beiFWgOJZt2SQdRN2Iqy/view?usp=sharing
+Debian 64b - https://drive.google.com/file/d/1_lhf9aYMlN32beiFWgOJZt2SQdRN2Iqy/view?usp=sharing
